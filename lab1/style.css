@@ -1,0 +1,67 @@
+<title> Insert title here </title>
+<link href="style.css" rel="stylesheet"> 
+header
+{
+display: block;
+width: 1078px;
+height:100px;
+position:relative;
+} 
+nav{
+display: block;
+width: 1078px;
+height:100px;
+} 
+
+footer{
+display: block;
+width: 1078px;
+height:100px;
+clear:both;
+} 
+
+main{
+	height:auto;
+	overflow:hidden;
+}
+
+body {
+ color: #ffffff;
+ background-color:#000000;
+ margin: 0px;
+text-align: center; 
+} 
+#container {
+ position: relative;
+margin: auto;
+ width: 1078px;
+ height: auto;
+ overflow: hidden;
+border: 1px solid #ffffff;
+} 
+#col-left {
+background-color:#006acc;
+width: 200px;
+ height: 200px;
+float: left; 
+}
+#col-center {
+height: 200px;
+
+}
+#logo {
+ position: absolute;
+ top:10px; 
+ left:10px; 
+ width: 200px;
+ height: 40px;
+ border: 2px dotted #731980;
+}
+table, th, td {
+  border: 0.5px solid white;
+  border-collapse: collapse;
+ 
+}
+#logo img {
+max-height:80px;
+} 
