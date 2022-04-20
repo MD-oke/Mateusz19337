@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#btn1").click(function(){
+$("p").append("<li>Dodatkowy element listy</li>");
+});
+});
+</script>
+</head>
+<body>
+<p>Uzupelnianie listy dodatkowym kontentem</p>
+<ol>
+<li>Element listy 1</li>
+<li>Element listy 2</li>
+<li>Element listy 3</li>
+</ol>
+<button id="btn1">Dodaj do listy</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+$("h1").addClass("dark-green");
+$("div").addClass("important");
+});
+$("button").click(function(){
+$("h2").addClass("brown");
+$("div").addClass("important");
+});
+$("button").click(function(){
+$("p").addClass("dark-blue");
+$("div").addClass("important");
+});
+});
+</script>
+<style>
+.important {
+font-weight: bold;
+font-size: xx-large;
+}
+.dark-blue {
+color: #00008B;
+}
+.dark-green{
+color: #006400;
+}
+.brown{
+color: brown;
+}
+</style>
+</head>
+<body>
+<h1>Nagłówek 1</h1>
+<h2>Nagłówek 2</h2>
+<p>Wiersz tesktu.</p>
+<p>Kolejny wiersz tekstu.</p>
+<div>To jest tekst specjalny, ani wiersz ani nagłówek</div><br>
+<button>Modyfikuj</button>
+</body>
+</html>
