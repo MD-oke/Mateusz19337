@@ -1,0 +1,110 @@
+   
+<!doctype html>
+<html lang="pl">
+<html ng-app="portfolioApp">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Wyszukiwarka Gier</title>
+  </head>
+  <body>
+  
+ 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+				<nav class="navbar-brand img">
+			<img src=logo.jpg alt=logo>
+			</nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Strona Główna <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="wyszukiwarka.html">Wyszukiwarka Gier</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="best.html">Bestsellery</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Infromacje
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="autor.html">Autor</a>
+                <a class="dropdown-item" href="kontakt.html">Formularz Kontaktowy</a>
+                <div class="dropdown-divider"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <header>
+<div class="container" ng-controller="GalleryListCtrl">
+	<div class="row content text-center">
+	
+	<label>Wyszukiwarka :</label>
+	<p><input type="text" ng-model="query" class="from-control"><p>
+	<p><p>
+	<p ng-if="query"><b>Wynik wyszukiwania :</b>{{query}}</p>
+	<span ng-if="query == null"></span>
+	<label>Sortowanie :</label>
+	<p><p>
+	<select ng-model="orderProp" ng-options="sort as sort.label for sort in sortlist" class="form-control">
+		<option value="title">Alfabetycznie</option>
+		<option value="when">Chronologicznie</option>
+		<option value="-when">Najnowsze</option>
+	</select>
+	<p ng-if="orderProp"><b>Galerie posortowanie: </b>{{orderProp.label}}</p>
+	<p></p>
+	<div class="col-sm-4" ng-repeat="gallery in galleries | filter:query | orderBy: orderProp.value"> 
+	<img src="{{gallery.thumbnailUrl}}" class="img-responsive center-block" alt="">
+	<p>Nazwa:{{gallery.title}}</p>
+	<p>kiedy:{{gallery.when}}</p>
+</div>
+</div>
+</div>
+
+      </header>
+      <section  id=”main-page”  class=”jumbotron”> 
+        <footer>
+              <div class=”container”>
+                <button type="button" class="btn btn-primary"datatoggle="modal" data-target="#myModal">
+                  Polityka prywatności
+                </button> 
+              </div>
+          </footer> 
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      …tu zawartość
+                  </div>
+              </div>
+          </div>
+    </section> 
+
+
+    <main role="main" class="containermain">
+
+
+    </main><!-- /.container -->
+
+    <!-- Optional JavaScript -->
+	<script src="forms.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/angular.min.js"></script> 
+	<script src="js/controllers.js"></script>
+  </body>
+</html>
