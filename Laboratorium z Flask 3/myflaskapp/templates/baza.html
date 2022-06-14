@@ -1,0 +1,22 @@
+</head>
+ <body>
+ <nav class="site-header sticky-top py-1">
+ <div class="container d-flex flex-column flex-md-row justify-content-between">
+ <a class="py-2 d-none d-md-inline-block" href="/">Strona główna</a>
+ <a class="py-2 d-none d-md-inline-block" href="/dodaj">Dodaj Studenta</a>
+ <a class="py-2 d-none d-md-inline-block" href="/lista">rezultat</a>
+ <a class="py-2 d-none d-md-inline-block" href="/about">O mnie</a>
+{% if current_user.is_authenticated %}
+ <a class="py-2 d-none d-md-inline-block" href="/logout">Wyloguj się</a>
+{% endif %}
+ </div>
+ </nav>
+ <main role="main" class="container">
+ <div class="starter-template">
+{% if tytul %}
+<h1>{{tytul}}</h1>
+{% else %}
+<h1>Strona główna<h1>
+{% endif %}
+{% block content %}{% endblock %}
+ </div>
