@@ -1,0 +1,19 @@
+<main role="main" class="container">
+ <div class="starter-template">
+ <h1>Dodaj pracownika</h1>
+<form action = "{{ url_for('addrec') }}" method = "POST">
+
+ Imię i nazwisko<br>
+ <input type = "text" name = "imieinazwisko" /></br>
+
+ nrpracownika<br>
+ <input type = "text" name = "nrpracownika" /><br>
+
+ Adres<br>
+ <textarea name = "adres" ></textarea><br>
+ <input type = "submit" value = "Zapisz" /><br>
+ </form>
+  <h2><a href ="/">Powrót do strony głównej</a></h2>
+ </div>
+ </main><!-- /.container -->
+ 
